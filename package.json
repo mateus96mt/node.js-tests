@@ -1,0 +1,24 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "Repository used to store node.js test applications",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateus96mt/node.js-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateus96mt/node.js-tests/issues"
+  },
+  "homepage": "https://github.com/mateus96mt/node.js-tests#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "validator": "^13.6.0",
+    "yargs": "^17.2.1"
+  }
+}
