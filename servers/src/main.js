@@ -5,6 +5,9 @@ const request = require('request')
 
 const app = express();
 
+//heroku provide their own port
+const port = process.env.PORT || 1200;
+
 console.log(__dirname)
 console.log(__filename)
 const publicPath = path.join(__dirname, '../public')
@@ -101,8 +104,8 @@ app.get('*', (req, res)=>{
 })
 
 
-
-app.listen(1200, ()=>{
+//port where heroku listen
+app.listen(port, ()=>{
     console.log('listening on')
 })
 
