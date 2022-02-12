@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express');
 const hbs = require('hbs')
+const request = require('request')
 
 const app = express();
 
@@ -46,20 +47,65 @@ app.get('/about', (req, res)=>{
 })
 
 app.get('/weather', (req, res)=>{
+    console.log('lat:', req.query.lat)
+    console.log('lon:', req.query.lon)
+
+    request.post({
+        uri: 'https://api.openweathermap.org/data/2.5/weather?lat=2&lon=-1&appid=d0102c72998dec1079dad02859dfdd1e',
+        callback: (error, response, body)=>{
+            const responseBody = JSON.parse(body);
+            console.log(responseBody.weather[0].description);
+        }
+    })
+
     res.render('weather', {
         title: 'weather'
     })
 })
+app.get('/products', (req, res)=>{
+    console.log('lat:', req.query.lat)
+    console.log('lon:', req.query.lon)
+    
+    res.render('products', {
+        title: 'products'
+    })
+})
+
+app.get('/json', (req, res)=>{
+    res.send({
+        field1: 'field1',
+        field2: 'field2',
+        field3: 'field3',
+        field4: 'field4',
+        field5: 'field5',
+        field6: 'field6'
+    })
+})
+
+app.get('/fetch', (req, res)=>{
+
+    // fetch('api.openweathermap.org/data/2.5/weather?lat=2&lon=-1&appid=d0102c72998dec1079dad02859dfdd1e').then((response)=>{
+    //     console.log(response)
+    // })
+
+    res.render('fetch', {
+        data: 'data'
+    })
+})
 
 app.get('*', (req, res)=>{
+    
     res.render('404', {
         title: 'page note found 404'
     })
 })
 
-app.listen(3000, ()=>{
+
+
+app.listen(1200, ()=>{
     console.log('listening on')
 })
+
 
 
 
