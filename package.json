@@ -4,7 +4,7 @@
   "description": "Repository used to store node.js test applications",
   "main": "hello.js",
   "scripts": {
-    "start":"node src/main.js"
+    "start":"node servers/src/main.js"
   },
   "repository": {
     "type": "git",
