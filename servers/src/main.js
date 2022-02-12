@@ -50,9 +50,10 @@ app.get('/about', (req, res)=>{
 })
 
 app.get('/fisalis', (req, res)=>{
-    res.render('fisalis-project-web/index', {
+    /*res.render('fisalis-project-web/index', {
         title: 'index'
-    })
+    })*/
+    res.sendFile(path.join(__dirname, '../views/fisalis-project-web/index.html'))
 })
 
 app.get('/weather', (req, res)=>{

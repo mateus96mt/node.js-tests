@@ -4,7 +4,8 @@
   "description": "Repository used to store node.js test applications",
   "main": "hello.js",
   "scripts": {
-    "start":"node servers/src/main.js"
+    "start":"node servers/src/main.js",
+    "dev":"nodemon servers/src/main.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
     "express": "^4.17.2",
     "hbs": "^4.2.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
