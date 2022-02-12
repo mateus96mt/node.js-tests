@@ -49,6 +49,12 @@ app.get('/about', (req, res)=>{
     })
 })
 
+app.get('/fisalis', (req, res)=>{
+    res.render('fisalis-project-web/index', {
+        title: 'index'
+    })
+})
+
 app.get('/weather', (req, res)=>{
     console.log('lat:', req.query.lat)
     console.log('lon:', req.query.lon)
